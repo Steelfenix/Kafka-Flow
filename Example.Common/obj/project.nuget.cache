@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "EGhWbFoqFu5DGrLgqVZM26xSN8pYHpJC81PxtUYnKUmHx19AlGmS2Cjn231fdjHdePa0mrHElidfjb4QLWV0bQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Example.Common\\Example.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Adrian\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

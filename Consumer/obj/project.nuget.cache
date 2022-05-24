@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "bls3P84r638zSVdWiK8vTAYarcBKNPP96y1n8BQynTlL7LvZ4DehgKNKrs5xrRWumsbQcfkYC15TztvPiDFIjg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Consumer\\Consumer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Adrian\\.nuget\\packages\\confluent.kafka\\1.8.2\\confluent.kafka.1.8.2.nupkg.sha512",
+    "C:\\Users\\Adrian\\.nuget\\packages\\librdkafka.redist\\1.8.2\\librdkafka.redist.1.8.2.nupkg.sha512",
+    "C:\\Users\\Adrian\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Adrian\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

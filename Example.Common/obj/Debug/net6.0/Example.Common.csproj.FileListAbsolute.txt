@@ -1,0 +1,12 @@
+C:\Users\Adrian\Documents\Trabajo\Htech\Kafka-Flow\Example.Common\bin\Debug\net6.0\Example.Common.deps.json
+C:\Users\Adrian\Documents\Trabajo\Htech\Kafka-Flow\Example.Common\bin\Debug\net6.0\Example.Common.dll
+C:\Users\Adrian\Documents\Trabajo\Htech\Kafka-Flow\Example.Common\bin\Debug\net6.0\Example.Common.pdb
+C:\Users\Adrian\Documents\Trabajo\Htech\Kafka-Flow\Example.Common\obj\Debug\net6.0\Example.Common.csproj.AssemblyReference.cache
+C:\Users\Adrian\Documents\Trabajo\Htech\Kafka-Flow\Example.Common\obj\Debug\net6.0\Example.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adrian\Documents\Trabajo\Htech\Kafka-Flow\Example.Common\obj\Debug\net6.0\Example.Common.AssemblyInfoInputs.cache
+C:\Users\Adrian\Documents\Trabajo\Htech\Kafka-Flow\Example.Common\obj\Debug\net6.0\Example.Common.AssemblyInfo.cs
+C:\Users\Adrian\Documents\Trabajo\Htech\Kafka-Flow\Example.Common\obj\Debug\net6.0\Example.Common.csproj.CoreCompileInputs.cache
+C:\Users\Adrian\Documents\Trabajo\Htech\Kafka-Flow\Example.Common\obj\Debug\net6.0\Example.Common.dll
+C:\Users\Adrian\Documents\Trabajo\Htech\Kafka-Flow\Example.Common\obj\Debug\net6.0\refint\Example.Common.dll
+C:\Users\Adrian\Documents\Trabajo\Htech\Kafka-Flow\Example.Common\obj\Debug\net6.0\Example.Common.pdb
+C:\Users\Adrian\Documents\Trabajo\Htech\Kafka-Flow\Example.Common\obj\Debug\net6.0\ref\Example.Common.dll

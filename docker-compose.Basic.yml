@@ -1,0 +1,61 @@
+﻿version: '3.8'
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.0.1
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - confluent
+
+  broker:
+    image: confluentinc/cp-kafka:7.0.1
+    container_name: broker
+    networks:
+      - confluent
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ADVERTISED_HOST_NAME: broker
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT,LISTENER_EXTERNAL:PLAINTEXT,EXTERNAL_SAME_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,LISTENER_EXTERNAL://broker:29092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      
+  consumer-1:
+    container_name: consumer-1
+    image: consumer-1
+    networks:
+      - confluent
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    build:
+      dockerfile: Consumer/Dockerfile
+      context: ./
+    restart: always
+    entrypoint: dotnet /app/Consumer.dll
+    
+  consumer-2:
+    container_name: consumer-2
+    image: consumer-2
+    networks:
+      - confluent
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    build:
+      dockerfile: Consumer/Dockerfile
+      context: ./
+    restart: always
+    entrypoint: dotnet /app/Consumer.dll
+
+networks:
+  confluent:
+    driver: bridge 

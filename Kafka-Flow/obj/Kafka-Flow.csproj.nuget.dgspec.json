@@ -4,14 +4,14 @@
     "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Kafka-Flow\\Kafka-Flow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Kafka-Flow\\Kafka-Flow.csproj": {
+    "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Example.Common\\Example.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Kafka-Flow\\Kafka-Flow.csproj",
-        "projectName": "Kafka-Flow",
-        "projectPath": "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Kafka-Flow\\Kafka-Flow.csproj",
+        "projectUniqueName": "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Example.Common\\Example.Common.csproj",
+        "projectName": "Example.Common",
+        "projectPath": "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Example.Common\\Example.Common.csproj",
         "packagesPath": "C:\\Users\\Adrian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Kafka-Flow\\obj\\",
+        "outputPath": "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Example.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,68 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Kafka-Flow\\Kafka-Flow.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Kafka-Flow\\Kafka-Flow.csproj",
+        "projectName": "Kafka-Flow",
+        "projectPath": "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Kafka-Flow\\Kafka-Flow.csproj",
+        "packagesPath": "C:\\Users\\Adrian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Kafka-Flow\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Example.Common\\Example.Common.csproj": {
+                "projectPath": "C:\\Users\\Adrian\\Documents\\Trabajo\\Htech\\Kafka-Flow\\Example.Common\\Example.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
             "AutoMapper": {
               "target": "Package",
               "version": "[11.0.1, )"
@@ -51,6 +113,26 @@
               "version": "[1.8.2, )"
             },
             "KafkaFlow": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "KafkaFlow.LogHandler.Console": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "KafkaFlow.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "KafkaFlow.Serializer": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "KafkaFlow.Serializer.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "KafkaFlow.TypedHandler": {
               "target": "Package",
               "version": "[2.2.4, )"
             },

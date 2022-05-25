@@ -1,4 +1,6 @@
-﻿using Kafka_Flow.ServiceCollectionExtensions.ConfigurationExtensions;
+﻿using Kafka_Flow.Kafka.Consumers.PrintMessage;
+using Kafka_Flow.ServiceCollectionExtensions.ConfigurationExtensions;
+using KafkaFlow;
 using Lamar;
 
 namespace Kafka_Flow;
@@ -22,7 +24,25 @@ public class Startup
             });
 
         services.AddSwagger(Configuration);
-
+        services.AddKafka(kafka =>
+            kafka
+                .UseConsoleLog()
+                .AddCluster(cluster => cluster
+                    .WithBrokers(new[] { "broker:29092" })
+                    .AddConsumer(
+                        consumer =>
+                            consumer.Topic("purchases")
+                                .WithGroupId("test-group")
+                                .WithName("Test")
+                                .WithInitialState(ConsumerInitialState.Running)
+                                .WithBufferSize(20)
+                                .WithWorkersCount(2)
+                                .WithAutoOffsetReset(AutoOffsetReset.Earliest)
+                                .AddMiddlewares(m =>
+                                    m.Add<PrintMessageMiddleware>())
+                    )
+                )
+        );
 
         services
             .AddMvc()
@@ -36,7 +56,8 @@ public class Startup
 
     public void Configure(
         IApplicationBuilder app,
-        IWebHostEnvironment env
+        IWebHostEnvironment env,
+        IHostApplicationLifetime lifetime
     )
     {
         app.UseSwagger();
@@ -48,5 +69,8 @@ public class Startup
         app.UseAuthentication();
         app.UseAuthorization();
         app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+
+        lifetime.ApplicationStarted.Register(() =>
+            app.ApplicationServices.CreateKafkaBus().StartAsync(lifetime.ApplicationStopped));
     }
 }

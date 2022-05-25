@@ -1,8 +1,6 @@
-﻿using System.Net;
-using Confluent.Kafka;
+﻿using Confluent.Kafka;
 using Example.Common;
 using Example.Common.Json;
-using Newtonsoft.Json;
 
 var config = new ProducerConfig
 {
@@ -16,7 +14,7 @@ const string topic = "purchases";
 string[] users = { "eabara", "jsmith", "sgarcia", "jbernard", "htanaka", "awalther" };
 string[] items = { "book", "alarm clock", "t-shirts", "gift card", "batteries" };
 
-using var producer = new ProducerBuilder<Null, string>(config).Build();
+using var producer = new ProducerBuilder<string, string>(config).Build();
 
 var numProduced = 0;
 const int numMessages = 10;
@@ -38,7 +36,7 @@ for (var i = 0; i < numMessages; ++i)
     
     await producer.ProduceAsync(
         topic, 
-        new Message<Null, string> { Value = order.AsJson()}
+        new Message<string, string> { Key = id.ToString(), Value = order.AsJson()}
     );
 }
 

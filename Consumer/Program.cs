@@ -9,14 +9,14 @@ Console.WriteLine("Works!!!");
 var config = new ConsumerConfig
 {
     BootstrapServers = "broker:29092",
-    GroupId = $"{Guid.NewGuid()}-{Dns.GetHostName()}",
+    GroupId = "test",
     AutoOffsetReset = AutoOffsetReset.Earliest,
     EnableAutoCommit = true,
     PartitionAssignmentStrategy = PartitionAssignmentStrategy.CooperativeSticky
 };
 const string topic = "purchases";
 
-using var consumer = new ConsumerBuilder<Ignore, string>(config).Build();
+using var consumer = new ConsumerBuilder<string, string>(config).Build();
 consumer.Subscribe(topic);
 
 while (true)
@@ -25,7 +25,7 @@ while (true)
     try
     {
         var order = JsonConvert.DeserializeObject<OrderDetail>(result.Message.Value);
-        Console.WriteLine($"{order.AsJson()}");
+        Console.WriteLine($"{result.Message.Key} - {order.AsJson()} {result.Partition}");
     }
     catch (Exception e)
     {

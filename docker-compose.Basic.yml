@@ -38,10 +38,10 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
     build:
-      dockerfile: Consumer/Dockerfile
+      dockerfile: Kafka-Flow/Dockerfile
       context: ./
     restart: always
-    entrypoint: dotnet /app/Consumer.dll
+    entrypoint: dotnet /app/Kafka-Flow.dll
     
   consumer-2:
     container_name: consumer-2
@@ -51,10 +51,23 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
     build:
-      dockerfile: Consumer/Dockerfile
+      dockerfile: Kafka-Flow/Dockerfile
       context: ./
     restart: always
-    entrypoint: dotnet /app/Consumer.dll
+    entrypoint: dotnet /app/Kafka-Flow.dll
+    
+  consumer-3:
+    container_name: consumer-3
+    image: consumer-3
+    networks:
+      - confluent
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    build:
+      dockerfile: Kafka-Flow/Dockerfile
+      context: ./
+    restart: always
+    entrypoint: dotnet /app/Kafka-Flow.dll
 
 networks:
   confluent:

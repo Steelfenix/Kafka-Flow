@@ -12,11 +12,20 @@
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
         <PackageReference Include="Confluent.Kafka" Version="1.8.2" />
         <PackageReference Include="KafkaFlow" Version="2.2.4" />
+        <PackageReference Include="KafkaFlow.LogHandler.Console" Version="2.2.4" />
+        <PackageReference Include="KafkaFlow.Microsoft.DependencyInjection" Version="2.2.4" />
+        <PackageReference Include="KafkaFlow.Serializer" Version="2.2.4" />
+        <PackageReference Include="KafkaFlow.Serializer.NewtonsoftJson" Version="2.2.4" />
+        <PackageReference Include="KafkaFlow.TypedHandler" Version="2.2.4" />
         <PackageReference Include="Lamar" Version="8.0.1" />
         <PackageReference Include="Lamar.Microsoft.DependencyInjection" Version="8.0.1" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.4" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Example.Common\Example.Common.csproj" />
     </ItemGroup>
 
 </Project>
